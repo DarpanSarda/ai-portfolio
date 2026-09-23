@@ -7,6 +7,24 @@ import { MotionReveal } from "@/components/motion-reveal";
 import { SiteHeader } from "@/components/site-header";
 import { projects } from "@/data/projects";
 
+const marqueeSkills = [
+  "Python",
+  "Next.js",
+  "Milvus",
+  "Qdrant",
+  "Embeddings",
+  "Reranker",
+  "MinIO",
+  "Vanna AI",
+  "LLMs",
+  "PostgreSQL",
+  "MongoDB",
+  "Langchain",
+  "Observability",
+  "Evals",
+  "Guardrails"
+];
+
 export default function Home() {
   return (
     <>
@@ -17,9 +35,9 @@ export default function Home() {
           <div className="hero-grid" aria-hidden="true" />
           <div className="section-shell hero-inner">
             <div className="hero-copy">
-              <p className="eyebrow"><span /> AI / GenAI Engineer · Ahmedabad</p>
-              <h1>Engineering intelligence into <em>real products.</em></h1>
-              <p className="hero-intro">I design agentic systems, grounded retrieval, and natural-language data products that hold up beyond the demo.</p>
+              <p className="eyebrow"><span /> AI Full Stack Developer · Ahmedabad</p>
+              <h1>Building production AI systems & <em>intelligent data platforms.</em></h1>
+              <p className="hero-intro">AI Full Stack Developer at Silvertouch Technologies. I build full-stack GenAI applications—from multi-agent workflows and vector retrieval pipelines to FastAPI backends and Next.js interfaces.</p>
               <div className="hero-actions">
                 <Link href="#work" className="button">Explore selected work <ArrowDown size={17} /></Link>
                 <a href="/Darpan_Sarda_Resume.pdf" target="_blank" className="text-link">View resume <ArrowUpRight size={16} /></a>
@@ -31,23 +49,13 @@ export default function Home() {
               <small>Silvertouch Technologies</small>
             </div>
           </div>
-          <div className="hero-index" aria-hidden="true"><span>RAG</span><span>AGENTS</span><span>NL2SQL</span></div>
-        </section>
-
-        <section className="signal-strip" aria-label="Professional snapshot">
-          <div className="section-shell signal-grid">
-            <div><strong>1.5+</strong><span>Years shipping AI</span></div>
-            <div><strong>04</strong><span>Production platforms</span></div>
-            <div><strong>Full stack</strong><span>Model to interface</span></div>
-            <div className="signal-tech"><span>LANGGRAPH</span><span>QDRANT</span><span>FASTAPI</span><span>NEXT.JS</span></div>
-          </div>
         </section>
 
         <section className="work-section section" id="work">
           <div className="section-shell">
             <MotionReveal className="section-heading">
-              <div><p className="kicker">Selected systems / 2025–26</p><h2>AI products built for real operational pressure.</h2></div>
-              <p>Beyond model calls: retrieval, reasoning, safeguards, observability, and interfaces designed as one system.</p>
+              <div><p className="kicker">Selected work</p><h2>Production AI systems & platforms.</h2></div>
+              <p>End-to-end applications across multi-agent workflows, enterprise RAG, and conversational database intelligence.</p>
             </MotionReveal>
           </div>
           <div className="project-list section-shell">
@@ -64,7 +72,7 @@ export default function Home() {
                     <p className="kicker">{project.category}</p>
                     <h3>{project.title}</h3>
                     <p>{project.summary}</p>
-                    <div className="project-stack">{project.stack.slice(0, 3).map((item) => <span key={item}>{item}</span>)}</div>
+                    <div className="project-stack">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
                     <Link href={`/projects/${project.slug}`} className="text-link">Explore the system <ArrowUpRight size={16} /></Link>
                   </div>
                 </article>
@@ -79,19 +87,47 @@ export default function Home() {
             <h2>Intelligence is only useful when the <em>whole system</em> earns trust.</h2>
           </MotionReveal>
           <div className="capability-grid">
-            <MotionReveal delay={0}><article><span>01</span><h3>Agentic architecture</h3><p>Stateful multi-agent workflows with explicit control, human checkpoints, and observable decisions.</p></article></MotionReveal>
-            <MotionReveal delay={0.08}><article><span>02</span><h3>Grounded retrieval</h3><p>Hybrid search, semantic reranking, and evaluation loops that keep generated answers anchored.</p></article></MotionReveal>
-            <MotionReveal delay={0.16}><article><span>03</span><h3>Product engineering</h3><p>FastAPI backends and crisp Next.js interfaces shaped around the way people actually work.</p></article></MotionReveal>
+            <MotionReveal delay={0}><article><span>01</span><h3>Agentic Workflows</h3><p>Stateful multi-agent workflows coordinating specialized workers (Email, Human Input, Condition) with live WebSocket telemetry.</p></article></MotionReveal>
+            <MotionReveal delay={0.08}><article><span>02</span><h3>High-Precision RAG</h3><p>Multi-source ingestion with web crawling, vector retrieval (Milvus, Qdrant), and cross-encoder reranking.</p></article></MotionReveal>
+            <MotionReveal delay={0.16}><article><span>03</span><h3>NL2SQL & Data Gates</h3><p>Domain intent routing, schema grounding, AST-enforced SELECT security gates, and 3-in-1 synced tables, graphs & summaries.</p></article></MotionReveal>
           </div>
-          <div className="skill-marquee"><div><span>Python</span><i>·</i><span>TypeScript</span><i>·</i><span>LangGraph</span><i>·</i><span>CrewAI</span><i>·</i><span>Qdrant</span><i>·</i><span>PostgreSQL</span><i>·</i><span>Docker</span><i>·</i><span>RAGAS</span></div></div>
+          <div className="skill-marquee" aria-label="Core technologies">
+            <div className="marquee-track">
+              {marqueeSkills.map((skill) => (
+                <span className="marquee-item" key={skill}>
+                  <span>{skill}</span>
+                  <i>·</i>
+                </span>
+              ))}
+            </div>
+            <div className="marquee-track" aria-hidden="true">
+              {marqueeSkills.map((skill, index) => (
+                <span className="marquee-item" key={`dup-${skill}-${index}`}>
+                  <span>{skill}</span>
+                  <i>·</i>
+                </span>
+              ))}
+            </div>
+          </div>
         </div></section>
 
         <section className="section-shell section experience" id="experience">
-          <MotionReveal><p className="kicker">Trajectory</p><div className="experience-layout"><div><h2>Building at the edge of applied AI.</h2><p className="experience-note">Based in Ahmedabad, working across AI architecture, backend systems, and product interfaces.</p></div><div className="timeline">
-              <article><span className="timeline-dot" /><div><strong>AI Full Stack Developer</strong><span>Jun 2025 — Present</span></div><p>Silvertouch Technologies</p></article>
-              <article><span className="timeline-dot" /><div><strong>AI / ML Intern</strong><span>Jan 2025 — Jun 2025</span></div><p>Silvertouch Technologies · Converted to full-time</p></article>
-              <article><span className="timeline-dot" /><div><strong>B.E. Computer Engineering</strong><span>2022 — 2025</span></div><p>VGEC Ahmedabad · 8.56 CGPA</p></article>
-            </div></div></MotionReveal>
+          <MotionReveal><p className="kicker">Trajectory</p><div className="experience-layout"><div><h2>Building at the edge of applied AI.</h2><p className="experience-note">Based in Ahmedabad, engineering end-to-end AI architectures, backend systems, and responsive interfaces.</p></div><div className="timeline">
+            <article><span className="timeline-dot" /><div><strong>AI Full Stack Developer</strong><span>Jun 2025 — Present</span></div><p>Silvertouch Technologies</p>
+              <ul>
+                <li>Architected and shipped 4 production AI SaaS platforms: TenderFlow AI, AskDB, MyBotGenie, and SAP Copilot.</li>
+                <li>Engineered low-latency FastAPI backends, LangGraph agent workflows, and real-time WebSocket telemetry.</li>
+                <li>Implemented enterprise security guardrails including AST-level SQL validation and multi-tenant BYO-LLM controls.</li>
+              </ul>
+            </article>
+            <article><span className="timeline-dot" /><div><strong>AI / ML Intern</strong><span>Jan 2025 — Jun 2025</span></div><p>Silvertouch Technologies · Converted to full-time</p>
+              <ul>
+                <li>Developed multi-source ingestion pipelines with recursive web crawlers and document chunking.</li>
+                <li>Built Qdrant vector retrieval systems with cross-encoder reranking to minimize hallucinations.</li>
+              </ul>
+            </article>
+            <article><span className="timeline-dot" /><div><strong>B.E. Computer Engineering</strong><span>2022 — 2025</span></div><p>VGEC Ahmedabad · 8.56 CGPA</p></article>
+          </div></div></MotionReveal>
         </section>
 
         <section className="contact section" id="contact"><div className="section-shell contact-inner">

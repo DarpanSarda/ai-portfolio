@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, Cpu, Layers, ShieldCheck } from "lucide-react";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
 import { projects } from "@/data/projects";
@@ -69,22 +69,74 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="case-image">
             <Image src={project.image} alt={`${project.title} product interface`} fill priority sizes="(max-width: 1200px) 100vw, 1180px" />
           </div>
+          {project.metrics && project.metrics.length > 0 && (
+            <div className="case-metrics">
+              {project.metrics.map((metric) => (
+                <div key={metric.label} className="case-metric-card">
+                  <div className="case-metric-value">{metric.value}</div>
+                  <div className="case-metric-label">{metric.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
         </section>
 
         <section className="section-shell case-body">
           <aside>
-            <p className="kicker">Technology</p>
+            <p className="kicker">Technology Stack</p>
             <div className="case-stack">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
             {project.liveUrl && (
-              <a href={project.liveUrl} className="button" target="_blank" rel="noreferrer">Visit product <ArrowUpRight size={17} /></a>
+              <a href={project.liveUrl} className="button" target="_blank" rel="noreferrer">Visit live product <ArrowUpRight size={17} /></a>
             )}
           </aside>
           <div className="case-content">
-            <p className="kicker">The system</p>
-            <h2>Building useful AI around real operational constraints.</h2>
+            <p className="kicker">Architecture & Overview</p>
+            <h2>Engineering intelligence around real operational constraints.</h2>
             <p className="case-description">{project.description}</p>
-            <div className="case-highlights">
-              {project.highlights.map((highlight) => <div key={highlight}><Check size={18} /><span>{highlight}</span></div>)}
+
+            {project.workflow && project.workflow.length > 0 && (
+              <div className="case-section-block">
+                <p className="kicker"><Cpu size={13} style={{ display: "inline", verticalAlign: "middle", marginRight: "6px" }} /> Execution Lifecycle</p>
+                <h3>How the System Works End-to-End</h3>
+                <div className="case-workflow">
+                  {project.workflow.map((item) => (
+                    <div key={item.step} className="workflow-step">
+                      <div className="workflow-step-num">{item.step}</div>
+                      <div className="workflow-step-content">
+                        <h4>{item.title}</h4>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {project.governanceOrFeatures && (
+              <div className="case-governance">
+                <h3>{project.governanceOrFeatures.title}</h3>
+                <div className="governance-list">
+                  {project.governanceOrFeatures.points.map((pt) => (
+                    <div key={pt} className="governance-item">
+                      <ShieldCheck size={18} />
+                      <span>{pt}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="case-section-block">
+              <p className="kicker"><Layers size={13} style={{ display: "inline", verticalAlign: "middle", marginRight: "6px" }} /> Engineering Highlights</p>
+              <h3>Capabilities & Guardrails</h3>
+              <div className="case-highlights">
+                {project.highlights.map((highlight) => (
+                  <div key={highlight}>
+                    <Check size={18} />
+                    <span>{highlight}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
