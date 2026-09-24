@@ -16,6 +16,7 @@ export type Project = {
   summary: string;
   description: string;
   image: string;
+  screenshots?: string[];
   liveUrl?: string;
   accent: "coral" | "teal" | "gold" | "blue";
   stack: string[];
@@ -104,6 +105,13 @@ export const projects: Project[] = [
     description:
       "An embeddable AI customer support platform built on a high-precision Retrieval-Augmented Generation (RAG) architecture. The platform continuously ingests multi-source enterprise knowledge—crawling websites via recursive link ingestion and parsing heterogeneous documents (PDFs, DOCX, policies). When a user submits an inquiry, the query is embedded and matched against vector representations using hybrid similarity, then passed through a cross-encoder reranker to discard noisy chunks before the grounded LLM generates an exact, citation-backed response.",
     image: "/projects/mybotgenie.png",
+    screenshots: [
+      "/projects/mybotgenie/image.png",
+      "/projects/mybotgenie/image copy.png",
+      "/projects/mybotgenie/image copy 2.png",
+      "/projects/mybotgenie/image copy 3.png",
+      "/projects/mybotgenie/image copy 4.png",
+    ],
     liveUrl: "https://mybotgenie.ai/",
     accent: "gold",
     stack: ["Next.js", "FastAPI", "Embeddings", "Reranker"],
@@ -171,6 +179,16 @@ export const projects: Project[] = [
     description:
       "An enterprise database intelligence assistant enabling non-technical stakeholders to talk directly with relational databases in plain English. The architecture begins with a domain classifier that routes the question to the correct module (e.g., federations, societies, banks). It then dynamically retrieves relevant table DDL schemas, enterprise business logic rules, and curated gold-standard SQL pairs from a Qdrant semantic store. After SQL synthesis, a hardened AST-based security gate verifies the query is strictly a read-only SELECT statement, and an automated 3-attempt self-correction loop catches syntax or execution errors before rendering synchronized data tables, dynamic charts, and natural language summaries.",
     image: "/projects/askdb.png",
+    screenshots: [
+      "/projects/AskDB/image.png",
+      "/projects/AskDB/image copy.png",
+      "/projects/AskDB/image copy 2.png",
+      "/projects/AskDB/image copy 3.png",
+      "/projects/AskDB/image copy 4.png",
+      "/projects/AskDB/image copy 5.png",
+      "/projects/AskDB/image copy 6.png",
+      "/projects/AskDB/image copy 7.png",
+    ],
     liveUrl: "http://103.180.31.33:3000/",
     accent: "teal",
     stack: ["Next.js", "FastAPI", "Qdrant"],
@@ -238,6 +256,13 @@ export const projects: Project[] = [
     description:
       "A dual-engine enterprise AI platform engineered specifically for complex SAP environments. The platform provides a conversational Talk-to-DB interface powered by Vanna AI and Qdrant that enables business users to query SAP HANA databases, review financial ledgers, inspect inventory, and generate executive summaries without complex transaction codes. Secondly, it features a visual, workflow-based multi-agent orchestration engine coordinating specialized agents—including Email Agents for automated communications, Human Input Agents that pause workflows for critical manager approvals, and Condition Agents that evaluate business thresholds—all streamed live over WebSockets.",
     image: "/projects/sap-copilot.png",
+    screenshots: [
+      "/projects/sapcopilot/image.png",
+      "/projects/sapcopilot/image copy.png",
+      "/projects/sapcopilot/image copy 2.png",
+      "/projects/sapcopilot/image copy 3.png",
+      "/projects/sapcopilot/image copy 4.png",
+    ],
     liveUrl: "https://staging-sapcopilot.silvertouch.com/",
     accent: "blue",
     stack: ["Next.js", "FastAPI", "Qdrant", "Vanna AI"],

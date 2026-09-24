@@ -62,19 +62,6 @@ export default function Home() {
           </nav>
         </section>
 
-        <section className="signal-strip" aria-label="Snapshot">
-          <div className="section-shell signal-grid">
-            <div><strong>1 yr+</strong><span>AI engineering in production</span></div>
-            <div><strong>94%</strong><span>NL2SQL first-pass accuracy</span></div>
-            <div><strong>&lt;200ms</strong><span>Retrieval &amp; rerank latency</span></div>
-            <div className="signal-tech">
-              <span>FastAPI</span>
-              <span>LangGraph</span>
-              <span>Qdrant / Milvus</span>
-              <span>Next.js</span>
-            </div>
-          </div>
-        </section>
 
         <section className="work-section section" id="work">
           <div className="section-shell">
@@ -89,7 +76,7 @@ export default function Home() {
                 <article>
                   <Link href={`/projects/${project.slug}`} className="project-visual" aria-label={`View ${project.title} case study`}>
                     <div className="project-browser"><span /><span /><span /></div>
-                    <Image src={project.image} alt={`${project.title} product interface`} fill sizes="(max-width: 850px) 100vw, 58vw" />
+                    <Image src={project.image} alt={`${project.title} product interface`} fill sizes="(max-width: 850px) 100vw, 58vw" priority={index === 0} loading={index === 0 ? undefined : "lazy"} />
                     <div className="project-glow" />
                   </Link>
                   <div className="project-copy">

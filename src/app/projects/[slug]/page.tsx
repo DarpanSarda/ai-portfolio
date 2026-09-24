@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Check, Cpu, Layers, ShieldCheck } from "lucide-react";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
+import { ProjectGallery } from "@/components/project-gallery";
 import { projects } from "@/data/projects";
 import { siteUrl } from "@/lib/site";
 
@@ -138,6 +139,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 ))}
               </div>
             </div>
+
+            {project.screenshots && project.screenshots.length > 0 && (
+              <div className="case-section-block">
+                <p className="kicker">Product Screenshots</p>
+                <h3>A closer look at the interface</h3>
+                <ProjectGallery images={project.screenshots} title={project.title} />
+              </div>
+            )}
           </div>
         </section>
 
