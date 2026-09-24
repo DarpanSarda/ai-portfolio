@@ -409,8 +409,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-copy { align-self: end; padding-bottom: 160px; }
   .hero-status { display: none; }
-  .signal-grid { grid-template-columns: repeat(3, 1fr); }
-  .signal-tech { display: none !important; }
   .section-heading, .experience-layout, .case-title, .case-body { grid-template-columns: 1fr; gap: 40px; }
   .project-list { gap: 110px; }
   .project-stage article { grid-template-columns: 1fr; gap: 42px; }
@@ -418,11 +416,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .project-visual { height: auto; aspect-ratio: 16/10; }
   .project-copy { max-width: 650px; }
   .project-number { top: -15px; }
-  .capability-grid { grid-template-columns: 1fr; }
+  .capability-grid { grid-template-columns: 1fr 1fr; }
   .capability-grid > div { border-right: 0; border-bottom: 1px solid var(--line); }
   .capability-grid article, .capability-grid > div + div article { min-height: 240px; padding: 30px 0; }
   .contact-layout { grid-template-columns: 1fr; }
   .case-body aside { position: static; }
+  /* Gallery */
+  .gallery-thumb { width: 240px; }
+  /* Lightbox — nav to sides but smaller */
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
 }
 
 @media (max-width: 560px) {
@@ -437,9 +440,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-scene { inset: 18% -70% 30% 10%; opacity: .45; }
   .hero-grid { background-size: 48px 48px; }
   .hero-index { display: none; }
-  .signal-grid { grid-template-columns: 1fr 1fr; }
-  .signal-grid > div { padding: 22px 15px; }
-  .signal-grid > div:nth-child(3) { display: none; }
   .section-heading { margin-bottom: 70px; }
   .section-heading h2, .experience h2, .contact h2, .capability-intro h2 { font-size: 46px; }
   .project-list { gap: 90px; }
@@ -448,6 +448,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .project-visual img { transform: scale(.96); }
   .project-number { font-size: 64px; }
   .project-copy h3 { font-size: 46px; }
+  .capability-grid { grid-template-columns: 1fr; }
   .capability-intro { margin-bottom: 65px; }
   .skill-marquee > div { justify-content: flex-start; }
   .experience-layout { gap: 60px; }
@@ -463,6 +464,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .case-title h1 { font-size: 62px; }
   .case-image { aspect-ratio: 4/3; }
   .case-body { padding-bottom: 80px; }
+  /* Gallery */
+  .gallery-thumb { width: 200px; }
+  /* Lightbox — move nav below image on tiny screens */
+  .lightbox { flex-direction: column; gap: 16px; padding: 20px; }
+  .lightbox-img-wrap { width: 100%; height: auto; aspect-ratio: 16/10; }
+  .lightbox-nav { position: static; transform: none; width: 44px; height: 44px; }
+  .lightbox-prev, .lightbox-next { position: static; }
+  .lightbox-close { top: 10px; right: 10px; }
+  .lightbox-counter { bottom: 10px; }
+  /* Case study detail */
+  .case-section-block h3 { font-size: 28px; }
+  .workflow-step { grid-template-columns: 32px 1fr; padding: 18px 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
