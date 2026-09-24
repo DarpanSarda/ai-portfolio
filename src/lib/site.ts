@@ -4,4 +4,4 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   ?? (vercelUrl ? `https://${vercelUrl}` : "http://localhost:3000");
 
 export const siteDescription =
-  "AI / GenAI Engineer building reliable agentic systems, RAG platforms, and natural-language data products.";
+  "AI Full Stack Developer shipping production agentic systems, high-precision RAG, and NL2SQL platforms for enterprise teams — four live products, not demos.";
