@@ -35,7 +35,22 @@ export const metadata: Metadata = {
     title: "Darpan Sarda — AI / GenAI Engineer",
     description: siteDescription,
   },
-  keywords: ["AI Engineer", "GenAI Engineer", "Agentic AI", "RAG", "NL2SQL", "LangGraph", "Ahmedabad"],
+  keywords: [
+    "AI Engineer",
+    "GenAI Engineer",
+    "AI Full Stack Developer",
+    "Agentic AI",
+    "RAG",
+    "NL2SQL",
+    "LangGraph",
+    "FastAPI",
+    "LLM Engineer",
+    "Vector Database",
+    "Qdrant",
+    "Milvus",
+    "Ahmedabad",
+    "India",
+  ],
 };
 
 export const viewport = {
