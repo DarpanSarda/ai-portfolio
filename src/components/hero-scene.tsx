@@ -30,6 +30,8 @@ function AvatarDisc({
       t.colorSpace = THREE.SRGBColorSpace;
       t.generateMipmaps = true;
       t.minFilter = THREE.LinearMipmapLinearFilter;
+      t.magFilter = THREE.LinearFilter;
+      t.anisotropy = 8;
       setTexture(t);
     });
   }, []);
@@ -133,7 +135,7 @@ function NeuralField() {
 export function HeroScene() {
   return (
     <div className="hero-scene" aria-hidden="true">
-      <Canvas camera={{ position: [0, 0, 6.8], fov: 47 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
+      <Canvas camera={{ position: [0, 0, 6.8], fov: 47 }} dpr={[1, 2]} gl={{ antialias: true, alpha: true }}>
         <ambientLight intensity={0.45} />
         <pointLight position={[2, 3, 5]} intensity={18} color="#7080ff" />
         <pointLight position={[-3, -2, 4]} intensity={12} color="#61e5ba" />
