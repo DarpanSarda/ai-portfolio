@@ -39,6 +39,16 @@ export const projects: Project[] = [
     description:
       "A comprehensive enterprise procurement platform covering the complete tender lifecycle. The system begins with intelligent requirement gathering (PQ/TQ criteria, legal mandates, and templates stored in MinIO), prompts the procurement team with proactive AI questions to fill critical gaps, and generates tenders section-by-section under human verification. It integrates custom Section and Annexure Builders for corporate reusability, indexes compliance vectors in Milvus, tracks vendor clarification queries and corrigendums in PostgreSQL, detects anomalies in submitted bid documents, and executes automated multi-method bid scoring and ranking (L1, LCS, QCBS) backed by org-wide enterprise governance.",
     image: "/projects/tenderflow.png",
+    screenshots: [
+      "/projects/TenderFlow/image1.png",
+      "/projects/TenderFlow/image2.png",
+      "/projects/TenderFlow/image3.png",
+      "/projects/TenderFlow/image4.png",
+      "/projects/TenderFlow/image5.png",
+      "/projects/TenderFlow/image6.png",
+      "/projects/TenderFlow/image7.png",
+      "/projects/TenderFlow/image8.png",
+    ],
     accent: "coral",
     stack: ["Next.js", "FastAPI", "Milvus", "MinIO", "PostgreSQL"],
     metrics: [
