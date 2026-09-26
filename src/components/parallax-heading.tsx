@@ -10,7 +10,7 @@ export function ParallaxHeading({ text }: { text: string }) {
 
   return (
     <div ref={ref} className="capabilities-bg" aria-hidden="true">
-      <motion.span style={{ x }}>{text}</motion.span>
+      <motion.span style={{ x }} aria-hidden="true" role="presentation">{text}</motion.span>
     </div>
   );
 }

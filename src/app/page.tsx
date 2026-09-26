@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, MapPin, Sparkles } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
-import { HeroScene } from "@/components/hero-scene";
+import { HeroSceneClient } from "@/components/hero-scene-client";
 import { MotionReveal } from "@/components/motion-reveal";
 import { ParallaxHeading } from "@/components/parallax-heading";
 import { SiteHeader } from "@/components/site-header";
@@ -36,7 +36,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <section className="hero">
-          <HeroScene />
+          <HeroSceneClient />
           <div className="hero-grid" aria-hidden="true" />
           <div className="section-shell hero-inner">
             <div className="hero-copy">
